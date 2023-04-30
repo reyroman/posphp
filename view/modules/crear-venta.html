@@ -1,0 +1,444 @@
+<div class="content-wrapper">
+
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+
+    <h1>Crear venta</h1>
+
+    <ol class="breadcrumb">
+
+      <li> <a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a> </li>
+
+      <li class="active">Crear venta</li>
+
+    </ol>
+
+  </section>
+
+  <section class="content">
+
+    <div class="row">
+
+      <!-- FORMULARIO  -->
+
+      <div class="col-lg-5 col-xs-12">
+
+        <div class="box box-success">
+
+          <div class="box-header with-border"></div>
+
+          <form role="form" method="post">
+
+            <div class="box-body">
+
+              <div class="box">
+
+                <!-- ENTRADA DEL VENDEDOR -->
+
+                <div class="form-group">
+                  <div class="input-group">
+
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+
+                    <input type="text" class="form-control" id="nuevoVendedor" name="nuevoVendedor"
+                      value="Usuario Administrador" readonly>
+
+                  </div>
+                </div>
+
+                <!-- ENTRADA DEL CODIGO DE VENTA -->
+
+                <div class="form-group">
+                  <div class="input-group">
+
+                    <span class="input-group-addon"><i class="fa fa-key"></i></span>
+
+                    <input type="text" class="form-control" id="nuevaVenta" name="nuevaVenta" value="123456" readonly>
+
+                  </div>
+                </div>
+
+                <!-- ENTRADA DEL CLIENTE -->
+
+                <div class="form-group">
+                  <div class="input-group">
+
+                    <span class="input-group-addon"><i class="fa fa-users"></i></span>
+
+                    <input type="text" class="form-control" id="agregarCliente" name="agregarCliente" value=""
+                      placeholder="Agregar cliente   " readonly>
+
+                    <span class="input-group-addon"><button type="button" class="btn btn-default btn-xs"
+                        data-toggle="modal" data-target="#modalAgregarCliente" data-dismiss="modal">Agregar
+                        cliente</button></span>
+
+                  </div>
+                </div>
+
+                <!-- ENTRADA DE AGREGAR PRODUCTO -->
+
+                <div class="form-group row nuevoProducto">
+
+                  <!-- DESCRIPCION DEL PRODUCTO -->
+
+                  <div class="col-xs-6" style="padding-right: 0px;">
+
+                    <div class="input-group">
+                      <span class="input-group-addon"><button type="botton" class="btn btn-danger btn-xs">
+                          <i class="fa fa-times"></i></button></span>
+
+                      <input type="text" class="form-control" id="agregarProducto" name="agregarProducto"
+                        placeholder="Descripcion del producto" required>
+                    </div>
+
+
+
+                  </div>
+
+                  <!-- CANTIDAD DEL PRODUCTO -->
+
+                  <div class="col-xs-3">
+
+                    <input type="number" class="form-control" name="nuevaCantidadProducto" id="nuevaCantidadProducto"
+                      min="1" placeholder="0" required>
+
+                  </div>
+
+                  <!-- PRECIO DEL PRODUCTO -->
+
+                  <div class="col-xs-3" style="padding-left: 0px;">
+
+                    <div class="input-group">
+
+                      <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+
+                      <input type="number" min="1" class="form-control" id="nuevoPrecioProducto"
+                        name="nuevoPrecioProducto" placeholder="000000" readonly required>
+
+
+                    </div>
+
+
+
+                  </div>
+
+                </div>
+
+                <!-- BOTON PARA AGREGAR PRODUCTO -->
+
+                <button type="button" class="btn btn-default hidden-lg">Agregar producto</button>
+
+                <hr>
+                <!-- IMPUESTOS Y TOTAL -->
+                <div class="row">
+
+                  <div class="col-xs-8 pull-right">
+
+                    <table class="table">
+
+                      <thead>
+                        <tr>
+                          <th>Impuestos</th>
+                          <th>Total</th>
+                        </tr>
+
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <!-- IMPUESTO DE VENTA -->
+                          <td style="width: 50%">
+
+                            <div class="input-group">
+
+
+
+                              <input type="number" class="form-control" name="nuevoImpuestoVenta"
+                                id="nuevoImpuestoVenta" placeholder="0" required>
+
+                              <span class="input-group-addon"><i class="fa fa-percent"></i></span>
+
+
+                            </div>
+                          </td>
+
+                          <!-- TOTAL DE VENTA -->
+
+                          <td style="width: 50%">
+
+                            <div class="input-group">
+
+                              <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+
+                              <input type="number" class="form-control" name="nuevoTotalVenta" id="nuevoTotalVenta"
+                                readonly placeholder="00000" required>
+
+
+
+                            </div>
+                          </td>
+
+                        </tr>
+                      </tbody>
+
+                    </table>
+
+                  </div>
+
+                </div>
+
+                <hr>
+                <!-- ENTRADA METODO DE PAGO -->
+
+                <div class="form-group row">
+
+                  <div class="col-xs-6" style="padding-right: 0px">
+
+                    <div class="input-group">
+
+                      <select class="form-control" name="nuevoMetodoPago" id="nuevoMetodoPago" required>
+
+                        <option value="">Seleccione método de pago</option>
+                        <option value="efectivo">Efectivo</option>
+                        <option value="tarjetaCredito">Tarjeta Crédito</option>
+                        <option value="tarjetaDebito">Tarjeta Debito</option>
+                        <option value="biopago">Biopago</option>
+                        <option value="pagoMovil">Pago Movil</option>
+                        <option value="transferencia">Transferencia</option>
+
+                      </select>
+
+                    </div>
+
+                  </div>
+
+                  <div class="col-xs-6" style="padding-left:0px">
+
+                    <div class="input-group">
+
+                      <input type="text" class="form-control" id="nuevoCodigoTransaccion" name="nuevoCodigoTransaccion"
+                        placeholder="Código transacción" required>
+
+                      <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <br>
+
+              </div>
+
+            </div>
+
+            <div class="box-footer">
+
+              <button type="submit" class="btn btn-primary pull-right">Guardar venta</button>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+      <!-- TABLA DE PRODUCTOS -->
+
+      <div class="col-lg-7 hidden-md hidden-sm hidden-xs">
+
+        <div class="box box-warning">
+
+          <div class="box-header with-border"></div>
+
+          <div class="box-body">
+
+            <table class="table table-bordered table-striped dt-responsive tabla">
+              <thead>
+                <tr>
+                  <th style="width:10px ">#</th>
+                  <th>Código</th>
+                  <th>Código de barras</th>
+                  <th>Descripción</th>
+                  <th>Categoría</th>
+                  <th>Stock</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+
+
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>205</td>
+                  <td>123456</td>
+                  <td>Taladro percutor</td>
+                  <td>Taladros</td>
+                  <td>20</td>
+                  <td>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-primary">Agregar</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+
+            </table>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+<!-- /.content-wrapper -->
+
+<!--  MODAL AGREGAR CLIENTE -->
+
+<div id="modalAgregarCliente" class="modal fade" role="dialog">
+
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+
+      <form role="form" method="post">
+
+        <!-- MODAL HEADER -->
+
+        <div class="modal-header" style="background:#3c8dbc; color:white">
+
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+          <h4 class="modal-title">Agregar cliente</h4>
+
+        </div>
+
+        <!-- FIN DE MODAL HEADER -->
+
+        <div class="modal-body">
+
+          <div class="box-body">
+
+            <!-- INGRESO DE CEDULA -->
+
+            <div class="form-group">
+
+              <div class="input-group">
+
+                <span class="input-group-addon"><i class="fa fa-id-card"></i></span>
+
+                <input type="number" min="0" class="form-control input-lg" name="nuevaCedula" id="nuevaCedula"
+                  placeholder="Ingresar cedula" required>
+
+              </div>
+
+            </div>
+
+            <!-- INGRESO DE NOMBRE -->
+
+            <div class="form-group">
+
+              <div class="input-group">
+
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+
+                <input type="text" class="form-control input-lg" name="nuevoNombre" placeholder="Ingresar nombre"
+                  required>
+
+              </div>
+
+            </div>
+
+            <!-- INGRESO DE EMAIL -->
+            <div class="form-group">
+
+              <div class="input-group">
+
+                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+
+                <input type="email" class="form-control input-lg" name="nuevoEmail" placeholder="Ingresar email">
+
+              </div>
+
+            </div>
+
+            <!-- INGRESO DE TELEFONO -->
+
+            <div class="form-group">
+
+              <div class="input-group">
+
+                <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+
+                <input type="text" class="form-control input-lg" name="nuevoTelefono" placeholder="Ingresar telefono"
+                  data-inputmask="'mask':'(9999)-999 9999'" data-mask>
+
+              </div>
+
+            </div>
+
+            <!-- INGRESO DE DIRECCION -->
+
+            <div class="form-group">
+
+              <div class="input-group">
+
+                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+
+                <input type="text" class="form-control input-lg" name="nuevaDireccion" placeholder="Ingresar dirección">
+
+              </div>
+
+            </div>
+
+            <!-- INGRESO DE FECHA DE NACIMIENTO -->
+
+            <div class="form-group">
+
+              <div class="input-group">
+
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+
+                <input type="text" class="form-control input-lg" name="nuevaFechaNacimiento"
+                  placeholder="Ingresar fecha de nacimiento" data-inputmask="'alias':'yyyy/mm/dd'" data-mask>
+
+              </div>
+
+            </div>
+
+          </div> <!-- MODAL BODY -->
+
+        </div> <!-- MODAL BOX -->
+
+        <!-- PIE DEL MODAL -->
+
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-default pull-left" data-dismiss="
+        modal">Salir</button>
+
+          <button type="submit" class="btn btn-primary">Guardar cliente</button>
+        </div>
+
+        <?php
+        $crearCliente = new ClienteController();
+        $crearCliente->ctrCrearCliente();
+        ?>
+
+
+      </form>
+
+    </div> <!-- MODAL CONTENT -->
+
+  </div> <!-- CLASS MODAL DIALOG -->
+
+</div> <!--MODAL AGREGAR CLIENTE -->
