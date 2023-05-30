@@ -150,6 +150,11 @@ class CategoriaController{
 
 		if(isset($_GET["idCategoria"])){
 
+			$respuesta = ProductModel::mdlMostrarProductos("productos", "id_categoria", $_GET["idCategoria"], "id");
+
+			if(!$respuesta){
+
+			
 			$tabla ="categorias";
 			$datos = $_GET["idCategoria"];
 
@@ -174,7 +179,26 @@ class CategoriaController{
 
 					</script>';
 			}
-		}
+			}else{
+
+		echo'<script>
+
+					swal({
+						  type: "error",
+						  title: "La categoría no se puede eliminar porque tiene productos asignados",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result){
+									if (result.value) {
+
+									window.location = "categorias";
+
+									}
+								})
+
+					</script>';
+			}
+	}
 		
 	}
 }

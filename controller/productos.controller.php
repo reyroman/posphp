@@ -22,7 +22,6 @@ class ProductController
 
             if (
                 preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevaDescripcion"]) &&
-                preg_match('/^[0-9]+$/', $_POST["nuevoCodigo"]) &&
                 preg_match('/^[0-9]+$/', $_POST["nuevoCodigoBarras"]) &&
                 preg_match('/^[0-9]+$/', $_POST["nuevoStock"]) &&
                 preg_match('/^[0-9.]+$/', $_POST["nuevoPrecioCompra"])&&

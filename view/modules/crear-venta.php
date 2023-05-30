@@ -63,6 +63,7 @@
 
                     $ventas = VentasController::ctrMostrarVentas($item, $valor);
 
+                    
                     if (!$ventas) {
 
                       echo '<input type="text" class="form-control" id="nuevaVenta"
@@ -75,6 +76,7 @@
 
                       $codigo = $value["codigo"] + 1;
 
+                    
                       echo '<input type="text" class="form-control" 
                       id="nuevaVenta" name="nuevaVenta" value="' . $codigo . '" readonly>';
                     }
@@ -178,8 +180,6 @@
 
                               <input type="hidden" name="nuevoPrecioNeto" id="nuevoPrecioNeto" required>
 
-
-
                               <span class="input-group-addon"><i class="fa fa-percent"></i></span>
 
 
@@ -227,16 +227,11 @@
                             </div>
                           </td>
 
-
-
                         </tr>
-
 
                       </tbody>
 
                     </table>
-
-
 
                   </div>
 
@@ -387,7 +382,7 @@
 
                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
 
-                <input type="text" class="form-control input-lg" name="nuevoNombre" placeholder="Ingresar nombre"
+                <input type="text" class="form-control input-lg" name="nuevoNombre2" placeholder="Ingresar nombre"
                   required>
 
               </div>
@@ -467,7 +462,7 @@
 
         <?php
         $crearCliente = new ClienteController();
-        $crearCliente->ctrCrearCliente();
+        $crearCliente->ctrCrearCliente2();
         ?>
 
 

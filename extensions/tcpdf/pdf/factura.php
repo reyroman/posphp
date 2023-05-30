@@ -1,5 +1,8 @@
 <?php
 
+require_once "../../../controller/negocio.controller.php";
+require_once "../../../model/negocio.model.php";
+
 require_once "../../../controller/ventas.controller.php";
 require_once "../../../model/ventas.model.php";
 
@@ -17,6 +20,13 @@ class imprimirFactura{
 public $codigo;
 
 public function traerImpresionFactura(){
+
+// INFORMACION DEL NEGOCIO
+
+$itemNegocio = "id";
+$valorNegocio = 0;
+
+$respuestaNegocio = NegocioController::ctrMostrarNegocio($itemNegocio, $valorNegocio);
 
 //TRAEMOS LA INFORMACIÓN DE LA VENTA
 
@@ -67,17 +77,18 @@ $bloque1 = <<<EOF
 		
 		<tr>
 			
-			<td style="width:150px"><img src="images/logo-negro-bloque.png"></td>
+			<td style="width:150px"><img src="images/logo-negro-bloque2.png"></td>
 
 			<td style="background-color:white; width:140px">
 				
 				<div style="font-size:8.5px; text-align:right; line-height:15px;">
 					
-					<br>
-					NIT: 71.759.963-9
-
-					<br>
-					Dirección: Calle 44B 92-11
+				<br>
+				Empresa: $respuestaNegocio[nombre]
+				<br>
+				Rif: $respuestaNegocio[rif]
+				<br>
+				Dirección: $respuestaNegocio[direccion]
 
 				</div>
 
@@ -87,11 +98,11 @@ $bloque1 = <<<EOF
 
 				<div style="font-size:8.5px; text-align:right; line-height:15px;">
 					
-					<br>
-					Teléfono: 300 786 52 49
-					
-					<br>
-					ventas@inventorysystem.com
+				<br>
+				Teléfono: $respuestaNegocio[telefono]
+				
+				<br>
+				$respuestaNegocio[email]
 
 				</div>
 				

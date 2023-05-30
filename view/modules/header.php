@@ -10,7 +10,7 @@
 		</span>
 
 		<span class="logo-lg">
-			<img src="view/img/template/logo-blanco-lineal.png" class="
+			<img src="view/img/template/logo-blanco-lineal2.png" class="
 			img-responsive" style="padding:10px 0px">	
 		</span>
 	</a>

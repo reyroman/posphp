@@ -2,17 +2,17 @@
 
 if(localStorage.getItem("capturarRango2") != null){
 
-	$("#daterange-btn2 span").html(localStorage.getItem("capturarRango2"));
+	$("#daterangeReportes-btn span").html(localStorage.getItem("capturarRango2"));
 
 }else{
 
-	$("#daterange-btn2 span").html('<i class="fa fa-calendar" ></i> Rango de fecha');
+	$("#daterangeReportes-btn span").html('<i class="fa fa-calendar" ></i> Rango de fecha');
 
 }
 
 //RANGO DE FECHAS
 
-$('#daterange-btn2').daterangepicker(
+$('#daterangeReportes-btn').daterangepicker(
 	{
 	  ranges   : {
 		'Hoy'       : [moment(), moment()],
@@ -26,7 +26,7 @@ $('#daterange-btn2').daterangepicker(
 	  endDate  : moment()
 	},
 	function (start, end) {
-	  $('#daterange-btn2 span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+	  $('#daterangeReportes-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
   
 	  var fechaInicial = start.format('YYYY-MM-DD');
 
@@ -36,7 +36,7 @@ $('#daterange-btn2').daterangepicker(
 
 	  console.log('fechaFinal', fechaFinal);
   
-	  var capturarRango = $("#daterange-btn2 span").html();
+	  var capturarRango = $("#daterangeReportes-btn span").html();
 	 
 		 localStorage.setItem("capturarRango2", capturarRango);
   
@@ -55,6 +55,7 @@ $(".daterangepicker.opensright .range_inputs .cancelBtn").on("click", function()
 	window.location = "reportes";
 })
 
+
 // CAPTURAR HOY
 
 
@@ -70,27 +71,11 @@ $(".daterangepicker.opensright .ranges li").on("click", function(){
 		var mes = d.getMonth()+1;
 		var año = d.getFullYear();
 
-		if(mes < 10){
+		dia = ("0"+dia).slice(-2);
+		mes = ("0"+mes).slice(-2);
 
-			var fechaInicial = año+"-0"+mes+"-"+dia;
-			var fechaFinal = año+"-0"+mes+"-"+dia;
-
-		}else if(dia < 10){
-
-			var fechaInicial = año+"-"+mes+"-0"+dia;
-			var fechaFinal = año+"-"+mes+"-0"+dia;
-
-		}else if(mes < 10 && dia < 10){
-
-			var fechaInicial = año+"-0"+mes+"-0"+dia;
-			var fechaFinal = año+"-0"+mes+"-0"+dia;
-
-		}else{
-
-			var fechaInicial = año+"-"+mes+"-"+dia;
-	    	var fechaFinal = año+"-"+mes+"-"+dia;
-
-		}	
+		var fechaInicial = año+"-"+mes+"-"+dia;
+		var fechaFinal = año+"-"+mes+"-"+dia;	
 
     	localStorage.setItem("capturarRango2", "Hoy");
 

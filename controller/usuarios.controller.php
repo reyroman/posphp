@@ -9,11 +9,11 @@ class UserController
         if (isset($_POST["ingUsuario"])) {
 
             if (
-                preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingUsuario"]) &&
-                preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingPassword"])
+                preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingUsuario"])
             ) {
 
                 $encritar = crypt($_POST["ingPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
+                
                 $tabla = "usuarios";
 
                 $item = "usuario";
@@ -21,9 +21,7 @@ class UserController
 
                 $respuesta = UserModel::mdlMostrarUsuarios($tabla, $item, $valor);
 
-                if (
-                    $respuesta["usuario"] == $_POST["ingUsuario"] &&
-                    $respuesta["password"] == $encritar) {
+                if (is_array($respuesta) && $respuesta["usuario"] == $_POST["ingUsuario"] && $respuesta["password"] == $encritar) {
                    
                         if($respuesta["estado"] == 1){
 

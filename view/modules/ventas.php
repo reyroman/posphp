@@ -1,3 +1,15 @@
+<?php
+ 
+if($_SESSION["perfil"] == "Especial"){
+
+  echo'<script>
+
+  window.location = "inicio";
+  
+  </script>';
+}
+?>
+
 <div class="content-wrapper">
 
   <section class="content-header">
@@ -21,7 +33,7 @@
         </button>
 
       </a>
-      <button type="button" class="btn btn-default pull-right" id="daterange-btn">
+      <button type="button" class="btn btn-default pull-right" id="daterangeVentas-btn">
 
       <span>
         <i class="fa fa-calendar"></i> Rango de fecha
@@ -106,14 +118,16 @@
       <div class="btn-group">
   
       <button class="btn btn-info btnImprimirFactura" 
-      codigoVenta="' . $value["codigo"] . '"><i class="fa fa-print"></i></button>
+      codigoVenta="' . $value["codigo"] . '"><i class="fa fa-print"></i></button>';
 
-      <button class="btn btn-warning btnEditarVenta" idVenta="'.$value["id"].'"><i class="fa fa-pencil"></i></button>
+      if($_SESSION["perfil"] == "Administrador"){
+
+      echo'<button class="btn btn-warning btnEditarVenta" idVenta="'.$value["id"].'"><i class="fa fa-pencil"></i></button>
   
        <button class="btn btn-danger btnEliminarVenta"
-         idVenta="'. $value["id"] .'"><i class="fa fa-times"></i></button>
-  
-      </div>
+         idVenta="'. $value["id"] .'"><i class="fa fa-times"></i></button>';
+      }
+      echo'</div>
       </td>
       </tr>'; 
 

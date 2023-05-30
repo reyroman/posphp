@@ -8,11 +8,11 @@ session_start();
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Sistema de Ventas</title>
+  <title>ServiPOS</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-  <link rel="icon" href="view/img/template/icono-negro.png">
+  <link rel="icon" href="view/img/template/icono-blanco.png">
   <!-- PLUGINS CSS -->
 
   <!-- Bootstrap 3.3.7 -->
@@ -39,6 +39,7 @@ session_start();
 
   <!-- Datarange picker -->
   <link rel="stylesheet" href="view/bower_components/bootstrap-datepicker/daterangepicker.css">
+
 
   <!-- Morris Chart -->
   <link rel="stylesheet" href="view/bower_components/morris.js/morris.css">
@@ -92,6 +93,7 @@ session_start();
   <script src="view/bower_components/moment/min/moment.min.js"></script>
   <script src="view/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
 
+
    <!-- Morris.js chart -->
   <script src="view/bower_components/raphael/raphael.min.js"></script>
   <script src="view/bower_components/morris.js/morris.min.js"></script>
@@ -128,6 +130,10 @@ session_start();
         $_GET["ruta"] == "dolar" ||
         $_GET["ruta"] == "productos" ||
         $_GET["ruta"] == "clientes" ||
+        $_GET["ruta"] == "movimientos" ||
+        $_GET["ruta"] == "editar-movimiento" ||
+        $_GET["ruta"] == "crear-entrada" ||
+        $_GET["ruta"] == "crear-salida" ||
         $_GET["ruta"] == "ventas" ||
         $_GET["ruta"] == "editar-venta" ||
         $_GET["ruta"] == "crear-venta" ||
@@ -163,6 +169,7 @@ session_start();
   <script src="view/js/productos.js"> </script>
   <script src="view/js/clientes.js"> </script>
   <script src="view/js/ventas.js"> </script>
+  <script src="view/js/movimientos.js"> </script>
   <script src="view/js/reportes.js"> </script>
 
 

@@ -1,3 +1,16 @@
+<?php
+ 
+if($_SESSION["perfil"] == "Especial"){
+
+  echo'<script>
+
+  window.location = "inicio";
+  
+  </script>';
+}
+
+?>
+
 <div class="content-wrapper">
 
   <!-- Content Header (Page header) -->
@@ -35,11 +48,6 @@
 
                 <?php
                  
-                 $item = "id";
-                 $valor = $_GET["idVenta"];
-
-                 $venta = VentasController::ctrMostrarVentas($item, $valor);
-
                  $item = "id";
                  $valor = $_GET["idVenta"];
 

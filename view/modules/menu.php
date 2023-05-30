@@ -4,7 +4,11 @@
 
 		<ul class="sidebar-menu">
 
-			<li class="active">
+		<?php
+
+		if($_SESSION["perfil"] == "Administrador"){
+
+			echo '<li class="active">
 
 				<a href="inicio" >
 					<i class="fa fa-home"></i>
@@ -21,8 +25,12 @@
 
 				</a>
 				
-			</li>
-			<li>
+			</li>';
+		}
+
+		if($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Especial"){
+
+			echo'<li>
 
 				<a href="categorias" >
 					<i class="fa fa-th"></i>
@@ -49,7 +57,46 @@
 				</a>
 				
 			</li>
-			<li>
+			
+			<li class="treeview">
+
+				<a href="#" >
+					<i class="fa fa-refresh"></i>
+					<span>Inventario</span>
+					<span class="pull-right-container">
+					<i class="fa fa-angle-left pull-right"></i>
+					</span>				
+
+				</a>
+				<ul class="treeview-menu">
+					<li>
+						<a href="movimientos">
+							<i class="fa fa-circle-o"></i>
+							<span>Administrar inventario</span>
+						</a>
+					</li>
+					<li>
+						<a href="crear-entrada">
+							<i class="fa fa-circle-o"></i>
+							<span>Crear entrada</span>
+						</a>
+					</li>
+					<li>
+						<a href="crear-salida">
+							<i class="fa fa-circle-o"></i>
+							<span>Crear salida</span>
+						</a>
+					</li>
+			
+				</ul>
+				
+			</li>';
+
+		}
+
+		if($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Vendedor"){
+
+			echo'<li>
 
 				<a href="clientes" >
 					<i class="fa fa-users"></i>
@@ -57,8 +104,13 @@
 
 				</a>
 				
-			</li>
-			<li class="treeview">
+			</li>';
+		}
+
+		if($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Vendedor"){
+
+
+			echo'<li class="treeview">
 
 				<a href="#" >
 					<i class="fa fa-list-ul"></i>
@@ -80,16 +132,24 @@
 							<i class="fa fa-circle-o"></i>
 							<span>Crear venta</span>
 						</a>
-					</li>
-					<li>
+					</li>';
+		
+
+		if($_SESSION["perfil"] == "Administrador"){
+
+					echo'<li>
 						<a href="reportes">
 							<i class="fa fa-circle-o"></i>
 							<span>Reporte de ventas</span>
 						</a>
-					</li>
-				</ul>
+					</li>';
+		}
+		
+				echo'</ul>
 				
-			</li>
+			</li>';
+	}
+	?>
 			
 		</ul>
 		

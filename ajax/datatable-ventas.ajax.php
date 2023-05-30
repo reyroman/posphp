@@ -29,7 +29,6 @@ class TablaProductosVentas
 		for ($i = 0; $i < count($productos); $i++) {
 
 
-
 			/*=============================================
 			TRAEMOS LA CATEGORÍA
 			=============================================*/

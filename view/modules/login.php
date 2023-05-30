@@ -3,8 +3,8 @@
 <div class="login-box">
 
 <div class="login-logo">
-    <img src="view/img/template/logo-blanco-bloque.png" class="img-responsive" 
-    style="padding:30px 100px 0px 100px">
+    <img src="view/img/template/logo-blanco-bloque-servipos2.png" class="img-responsive" 
+    style="padding:30px 50px 0px 50px">
   </div>
 
   <!-- /.login-logo -->

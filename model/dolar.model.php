@@ -34,8 +34,9 @@ class DolarModel{
     // EDITAR VALOR DEL DOLAR
     static public function mdlEditarDolar($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET valor_dolar = :valor_dolar WHERE id = :id");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET id_usuario = :id_usuario, valor_dolar = :valor_dolar WHERE id = :id");
 
+        $stmt -> bindParam(":id_usuario", $datos["id_usuario"], PDO::PARAM_STR);
 		$stmt -> bindParam(":valor_dolar", $datos["valor_dolar"], PDO::PARAM_STR);
 		$stmt -> bindParam(":id", $datos["id"], PDO::PARAM_INT);
 

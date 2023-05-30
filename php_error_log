@@ -1,0 +1,129 @@
+[06-May-2023 19:42:08 Europe/Berlin] PHP Parse error:  Unmatched '}' in C:\xampp\htdocs\pos\controller\movimientos.controller.php on line 245
+[06-May-2023 19:58:20 Europe/Berlin] PHP Warning:  Undefined array key "cantidad" in C:\xampp\htdocs\pos\view\modules\editar-movimiento.php on line 122
+[06-May-2023 20:11:13 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_push(): Argument #1 ($array) must be of type array, null given in C:\xampp\htdocs\pos\controller\movimientos.controller.php:134
+Stack trace:
+#0 C:\xampp\htdocs\pos\controller\movimientos.controller.php(134): array_push(NULL, '12')
+#1 C:\xampp\htdocs\pos\view\modules\editar-movimiento.php(181): MovimientosController::ctrEditarMovimiento()
+#2 C:\xampp\htdocs\pos\view\template.php(141): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\pos\controller\template.controller.php(7): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\pos\index.php(28): TemplateController::ctrTemplate()
+#5 {main}
+  thrown in C:\xampp\htdocs\pos\controller\movimientos.controller.php on line 134
+[06-May-2023 20:12:12 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_push(): Argument #1 ($array) must be of type array, null given in C:\xampp\htdocs\pos\controller\movimientos.controller.php:134
+Stack trace:
+#0 C:\xampp\htdocs\pos\controller\movimientos.controller.php(134): array_push(NULL, '12')
+#1 C:\xampp\htdocs\pos\view\modules\editar-movimiento.php(181): MovimientosController::ctrEditarMovimiento()
+#2 C:\xampp\htdocs\pos\view\template.php(141): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\pos\controller\template.controller.php(7): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\pos\index.php(28): TemplateController::ctrTemplate()
+#5 {main}
+  thrown in C:\xampp\htdocs\pos\controller\movimientos.controller.php on line 134
+[06-May-2023 20:12:27 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_push(): Argument #1 ($array) must be of type array, null given in C:\xampp\htdocs\pos\controller\movimientos.controller.php:134
+Stack trace:
+#0 C:\xampp\htdocs\pos\controller\movimientos.controller.php(134): array_push(NULL, '12')
+#1 C:\xampp\htdocs\pos\view\modules\editar-movimiento.php(181): MovimientosController::ctrEditarMovimiento()
+#2 C:\xampp\htdocs\pos\view\template.php(141): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\pos\controller\template.controller.php(7): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\pos\index.php(28): TemplateController::ctrTemplate()
+#5 {main}
+  thrown in C:\xampp\htdocs\pos\controller\movimientos.controller.php on line 134
+[06-May-2023 20:32:53 Europe/Berlin] PHP Warning:  Undefined array key "nuevostock" in C:\xampp\htdocs\pos\controller\movimientos.controller.php on line 145
+[06-May-2023 20:35:38 Europe/Berlin] PHP Warning:  Undefined array key "editarCantidadProducto" in C:\xampp\htdocs\pos\controller\movimientos.controller.php on line 145
+[06-May-2023 21:09:01 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method MovimientosController::ctrEditarMovimiento() in C:\xampp\htdocs\pos\view\modules\editar-movimiento.php:181
+Stack trace:
+#0 C:\xampp\htdocs\pos\view\template.php(141): include()
+#1 C:\xampp\htdocs\pos\controller\template.controller.php(7): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\pos\index.php(28): TemplateController::ctrTemplate()
+#3 {main}
+  thrown in C:\xampp\htdocs\pos\view\modules\editar-movimiento.php on line 181
+[06-May-2023 21:19:58 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-inventario WHERE codigo = '105' 
+         ORDER BY id ASC' at line 1 in C:\xampp\htdocs\pos\model\movimientos.model.php:16
+Stack trace:
+#0 C:\xampp\htdocs\pos\model\movimientos.model.php(16): PDOStatement->execute()
+#1 C:\xampp\htdocs\pos\controller\movimientos.controller.php(125): MovimientosModel::mdlMostrarMovimientos('movimientos-inv...', 'codigo', '105')
+#2 C:\xampp\htdocs\pos\view\modules\editar-movimiento.php(181): MovimientosController::ctrEditarMovimiento()
+#3 C:\xampp\htdocs\pos\view\template.php(141): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\pos\controller\template.controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\pos\index.php(28): TemplateController::ctrTemplate()
+#6 {main}
+  thrown in C:\xampp\htdocs\pos\model\movimientos.model.php on line 16
+[06-May-2023 21:23:19 Europe/Berlin] PHP Warning:  Undefined array key "editarMovimiento" in C:\xampp\htdocs\pos\controller\movimientos.controller.php on line 199
+[06-May-2023 21:23:19 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id_cliente' in 'field list' in C:\xampp\htdocs\pos\model\ventas.model.php:86
+Stack trace:
+#0 C:\xampp\htdocs\pos\model\ventas.model.php(86): PDOStatement->execute()
+#1 C:\xampp\htdocs\pos\controller\movimientos.controller.php(205): VentasModel::mdlEditarVenta('movimientos_inv...', Array)
+#2 C:\xampp\htdocs\pos\view\modules\editar-movimiento.php(181): MovimientosController::ctrEditarMovimiento()
+#3 C:\xampp\htdocs\pos\view\template.php(141): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\pos\controller\template.controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\pos\index.php(28): TemplateController::ctrTemplate()
+#6 {main}
+  thrown in C:\xampp\htdocs\pos\model\ventas.model.php on line 86
+[06-May-2023 21:24:09 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id_cliente' in 'field list' in C:\xampp\htdocs\pos\model\ventas.model.php:86
+Stack trace:
+#0 C:\xampp\htdocs\pos\model\ventas.model.php(86): PDOStatement->execute()
+#1 C:\xampp\htdocs\pos\controller\movimientos.controller.php(205): VentasModel::mdlEditarVenta('movimientos_inv...', Array)
+#2 C:\xampp\htdocs\pos\view\modules\editar-movimiento.php(181): MovimientosController::ctrEditarMovimiento()
+#3 C:\xampp\htdocs\pos\view\template.php(141): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\pos\controller\template.controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\pos\index.php(28): TemplateController::ctrTemplate()
+#6 {main}
+  thrown in C:\xampp\htdocs\pos\model\ventas.model.php on line 86
+[06-May-2023 21:35:23 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\pos\model\movimientos.model.php on line 75
+[06-May-2023 22:16:20 Europe/Berlin] PHP Parse error:  syntax error, unexpected token "public", expecting "::" in C:\xampp\htdocs\pos\controller\movimientos.controller.php on line 239
+[06-May-2023 22:23:46 Europe/Berlin] PHP Parse error:  syntax error, unexpected token "public", expecting "::" in C:\xampp\htdocs\pos\controller\movimientos.controller.php on line 235
+[06-May-2023 22:24:06 Europe/Berlin] PHP Parse error:  syntax error, unexpected token "public", expecting "::" in C:\xampp\htdocs\pos\controller\movimientos.controller.php on line 235
+[06-May-2023 22:24:09 Europe/Berlin] PHP Parse error:  syntax error, unexpected token "public", expecting "::" in C:\xampp\htdocs\pos\controller\movimientos.controller.php on line 235
+[09-May-2023 22:11:27 Europe/Berlin] PHP Fatal error:  Uncaught DivisionByZeroError: Division by zero in C:\xampp\htdocs\pos\view\modules\editar-venta.php:66
+Stack trace:
+#0 C:\xampp\htdocs\pos\view\template.php(141): include()
+#1 C:\xampp\htdocs\pos\controller\template.controller.php(7): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\pos\index.php(28): TemplateController::ctrTemplate()
+#3 {main}
+  thrown in C:\xampp\htdocs\pos\view\modules\editar-venta.php on line 66
+[17-May-2023 19:18:48 Europe/Berlin] PHP Warning:  Undefined variable $usuario in C:\xampp\htdocs\pos\view\modules\dolar.php on line 111
+[17-May-2023 19:18:48 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\pos\view\modules\dolar.php on line 111
+[17-May-2023 19:18:48 Europe/Berlin] PHP Warning:  Undefined variable $usuario in C:\xampp\htdocs\pos\view\modules\dolar.php on line 113
+[17-May-2023 19:18:48 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\pos\view\modules\dolar.php on line 113
+[17-May-2023 19:19:40 Europe/Berlin] PHP Warning:  Undefined variable $usuario in C:\xampp\htdocs\pos\view\modules\dolar.php on line 111
+[17-May-2023 19:19:40 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\pos\view\modules\dolar.php on line 111
+[17-May-2023 19:19:40 Europe/Berlin] PHP Warning:  Undefined variable $usuario in C:\xampp\htdocs\pos\view\modules\dolar.php on line 113
+[17-May-2023 19:19:40 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\pos\view\modules\dolar.php on line 113
+[17-May-2023 19:24:28 Europe/Berlin] PHP Warning:  Undefined array key "idUsuario" in C:\xampp\htdocs\pos\controller\dolar.controller.php on line 24
+[17-May-2023 19:29:11 Europe/Berlin] PHP Warning:  Undefined array key "id_usuario" in C:\xampp\htdocs\pos\view\modules\dolar.php on line 51
+[17-May-2023 19:29:11 Europe/Berlin] PHP Warning:  Undefined variable $itemVendedor in C:\xampp\htdocs\pos\view\modules\dolar.php on line 53
+[17-May-2023 19:29:11 Europe/Berlin] PHP Warning:  Undefined variable $valorVendedor in C:\xampp\htdocs\pos\view\modules\dolar.php on line 53
+[17-May-2023 19:29:11 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\pos\view\modules\dolar.php on line 57
+[17-May-2023 19:29:11 Europe/Berlin] PHP Warning:  Undefined variable $Array in C:\xampp\htdocs\pos\view\modules\dolar.php on line 57
+[17-May-2023 19:29:11 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\pos\view\modules\dolar.php on line 57
+[17-May-2023 19:30:25 Europe/Berlin] PHP Warning:  Undefined array key "id_usuario" in C:\xampp\htdocs\pos\view\modules\dolar.php on line 51
+[17-May-2023 19:30:25 Europe/Berlin] PHP Warning:  Undefined variable $itemVendedor in C:\xampp\htdocs\pos\view\modules\dolar.php on line 53
+[17-May-2023 19:30:25 Europe/Berlin] PHP Warning:  Undefined variable $valorVendedor in C:\xampp\htdocs\pos\view\modules\dolar.php on line 53
+[17-May-2023 19:30:25 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\pos\view\modules\dolar.php on line 57
+[17-May-2023 19:30:25 Europe/Berlin] PHP Warning:  Undefined variable $Array in C:\xampp\htdocs\pos\view\modules\dolar.php on line 57
+[17-May-2023 19:30:25 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\pos\view\modules\dolar.php on line 57
+[17-May-2023 19:30:36 Europe/Berlin] PHP Warning:  Undefined array key "id_usuario" in C:\xampp\htdocs\pos\view\modules\dolar.php on line 51
+[17-May-2023 19:30:36 Europe/Berlin] PHP Warning:  Undefined variable $itemVendedor in C:\xampp\htdocs\pos\view\modules\dolar.php on line 53
+[17-May-2023 19:30:36 Europe/Berlin] PHP Warning:  Undefined variable $valorVendedor in C:\xampp\htdocs\pos\view\modules\dolar.php on line 53
+[17-May-2023 19:30:36 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\pos\view\modules\dolar.php on line 57
+[17-May-2023 19:30:36 Europe/Berlin] PHP Warning:  Undefined variable $Array in C:\xampp\htdocs\pos\view\modules\dolar.php on line 57
+[17-May-2023 19:30:36 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\pos\view\modules\dolar.php on line 57
+[17-May-2023 19:31:12 Europe/Berlin] PHP Warning:  Undefined array key "id_usuario" in C:\xampp\htdocs\pos\view\modules\dolar.php on line 51
+[17-May-2023 19:31:12 Europe/Berlin] PHP Warning:  Undefined variable $ in C:\xampp\htdocs\pos\view\modules\dolar.php on line 57
+[17-May-2023 19:31:12 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\pos\view\modules\dolar.php on line 57
+[17-May-2023 19:31:31 Europe/Berlin] PHP Warning:  Undefined array key "id_usuario" in C:\xampp\htdocs\pos\view\modules\dolar.php on line 51
+[17-May-2023 19:31:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\view\modules\dolar.php on line 57
+[17-May-2023 21:49:22 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\pos\controller\movimientos.controller.php on line 146
+[17-May-2023 21:49:31 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\pos\controller\movimientos.controller.php on line 146
+[17-May-2023 21:49:34 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\pos\controller\movimientos.controller.php on line 146
+[17-May-2023 21:53:54 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\pos\controller\movimientos.controller.php on line 146
+[17-May-2023 21:54:02 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\pos\controller\movimientos.controller.php on line 146
+[21-May-2023 04:20:02 Europe/Berlin] PHP Warning:  Undefined array key "editarMovimiento" in C:\xampp\htdocs\pos\controller\movimientos.controller.php on line 122
+[21-May-2023 04:20:02 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\movimientos.controller.php on line 130
+[21-May-2023 04:20:13 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\pos\view\modules\editar-movimiento.php on line 114
+[25-May-2023 21:12:22 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method MovimientosController::ctrCrear() in C:\xampp\htdocs\pos\view\modules\crear-salida.php:148
+Stack trace:
+#0 C:\xampp\htdocs\pos\view\template.php(144): include()
+#1 C:\xampp\htdocs\pos\controller\template.controller.php(7): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\pos\index.php(28): TemplateController::ctrTemplate()
+#3 {main}
+  thrown in C:\xampp\htdocs\pos\view\modules\crear-salida.php on line 148

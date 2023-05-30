@@ -1,3 +1,15 @@
+<?php
+ 
+if($_SESSION["perfil"] == "Vendedor"){
+
+  echo'<script>
+
+  window.location = "inicio";
+  
+  </script>';
+}
+
+?>
 <div class="content-wrapper">
 
   <section class="content-header">
@@ -46,6 +58,8 @@
           </tbody>
 
         </table>
+
+        <input type="hidden" value="<?php echo $_SESSION['perfil']; ?>" id="perfilOculto">
 
       </div>
 
@@ -343,7 +357,7 @@
 
                 <span class="input-group-addon"><i class="fa fa-check"></i></span>
 
-                <input type="number" class="form-control input-lg" id="editarStock" name="editarStock" min="0" required>
+                <input type="number" class="form-control input-lg" id="editarStock" name="editarStock" min="0" readonly required>
 
               </div>
 

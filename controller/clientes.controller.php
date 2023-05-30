@@ -79,6 +79,83 @@ class ClienteController{
 
         }
     }
+	// CREAR CLIENTE DESDE VENTAS
+	static public function ctrCrearCliente2()
+    {
+
+        if (isset($_POST["nuevoNombre2"])) {
+
+            if (
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoNombre2"]) &&
+                preg_match('/^[0-9]+$/', $_POST["nuevaCedula"]) 
+			
+            ){
+
+                $tabla = "clientes";
+                                
+                $datos = array(
+					"ci" => $_POST["nuevaCedula"],
+                    "nombre" => $_POST["nuevoNombre2"],
+					"email" => $_POST["nuevoEmail"],
+					"telefono" => $_POST["nuevoTelefono"],
+					"direccion" => $_POST["nuevaDireccion"],
+					"fecha_nacimiento" => $_POST["nuevaFechaNacimiento"]);
+                    
+
+                $respuesta = ClienteModel::mdlIngresarCliente($tabla, $datos);
+
+                if ($respuesta == "ok") {
+                    
+                    echo '<script>
+
+					swal({
+
+						type: "success",
+						title: "¡El cliente ha sido guardado correctamente!",
+						showConfirmButton: true,
+						confirmButtonText: "Cerrar"
+
+					}).then(function(result){
+
+						if(result.value){
+						
+							window.location = "crear-venta";
+
+						}
+
+					});
+				
+
+					</script>';
+
+                }
+
+            } else {
+                echo '<script>
+
+                swal({
+
+                    type: "error",
+                    title: "¡Los campos de cedula y nombre no pueden ir vacios o llevar caracteres especiales!",
+                    showConfirmButton: true,
+                    confirmButtonText: "Cerrar"
+
+                }).then(function(result){
+
+                    if(result.value){
+                    
+                        window.location = "crear-venta";
+
+                    }
+
+                });
+            
+
+            </script>';
+            }
+
+        }
+    }
 
       // MOSTRAR CLIENTES 
       static public function ctrMostrarClientes($item, $valor){

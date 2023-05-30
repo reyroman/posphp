@@ -48,7 +48,7 @@ $noRepetirFechas = array_unique($arrayFechas);
 
 <!-- GRAFICO DE VENTAS EN DOLARES -->
 
-<div class="box box-solid bg-aqua-gradient">
+<div class="box box-solid bg-green">
 
     <div class ="box-header">
      

@@ -1,3 +1,15 @@
+<?php
+ 
+if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
+
+  echo'<script>
+
+  window.location = "inicio";
+  
+  </script>';
+}
+?>
+
 <div class="content-wrapper">
 
   <section class="content-header">
@@ -23,7 +35,7 @@
 
       <div class ="input-group">
        
-        <button type="button" class="btn btn-default" id="daterange-btn2">
+        <button type="button" class="btn btn-default" id="daterangeReportes-btn">
 
           <span>
             <i class="fa fa-calendar"></i> Rango de fecha
@@ -42,13 +54,13 @@
           if(isset($_GET["fechaInicial"])){
 
             echo'
-           <a href="vitas/modulos/descargar-reporte.php?reporte=reporte&fechaInicial="'.$_GET["fechaInicial"
+           <a href="view/modules/descargar-reporte.php?reporte=reporte&fechaInicial='.$_GET["fechaInicial"
            ].'&fechaFinal='.$_GET["fechaFinal"].'">';
 
           }else{
 
             echo'
-           <a href="vitas/modulos/descargar-reporte.php?reporte=reporte">';
+           <a href="view/modules/descargar-reporte.php?reporte=reporte">';
 
           }
                      

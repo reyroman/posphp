@@ -54,6 +54,10 @@
         this.opens = 'right';
         if (this.element.hasClass('pull-right'))
             this.opens = 'left';
+            
+        if (this.element.hasClass('center'))
+            this.opens = 'center';
+
 
         this.drops = 'down';
         if (this.element.hasClass('dropup'))

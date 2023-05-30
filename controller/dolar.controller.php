@@ -21,7 +21,8 @@ class DolarController{
 
 				$tabla = "dolar";	
 				
-				$datos = array("valor_dolar"=>$_POST["editarDolar"],
+				$datos = array("id_usuario"=>$_POST["idUsuario"],
+					           "valor_dolar"=>$_POST["editarDolar"],
 							   "id"=>$_POST["idDolar"]);
 
 			 $respuesta = DolarModel::mdlEditarDolar($tabla, $datos);
@@ -54,7 +55,7 @@ class DolarController{
 
 					swal({
 						  type: "error",
-						  title: "¡El campor valor solo puede tener números y .!",
+						  title: "¡El campor valor solo puede tener números y (.)!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){

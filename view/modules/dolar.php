@@ -28,22 +28,33 @@
             <tr>
 
               <th style="width:10px">#</th>
+              <th>Usuario</th>
               <th>Valor</th>
               <th>Fecha</th>
               <th>Acciones</th>
 
             </tr>
           </thead>
-          <tbody>
+          <tbody>       
 
             <?php
+
+            
+            
             $item = null;
             $valor = null;
 
             $dolar = DolarController::ctrMostrarDolar($item, $valor);
             foreach ($dolar as $key => $value) {
-              echo '<tr> 
+
+            $itemUsuario = "id";
+            $valorUsuario = $value["id_usuario"];
+
+            $respuestaUsuario = UserController::ctrMostrarUsuarios($itemUsuario, $valorUsuario);
+              
+            echo '<tr> 
                 <td>' . ($key + 1) . '</td>
+                <td class="text-uppercase">' . $respuestaUsuario["nombre"] . '</td>
                 <td class="text-uppercase">' . $value["valor_dolar"] . '</td>
                 <td class="text-uppercase">' . $value["fecha"] . '</td>
             
@@ -95,6 +106,21 @@
 
         <div class="modal-body">
           <div class="box-body">
+
+             <!-- EDITAR USUARIO -->
+
+             <div class="form-group">
+                  <div class="input-group">
+
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+
+                    <input type="text" class="form-control" id="editarUsuario"
+                      value="<?php echo $_SESSION["nombre"]; ?>" readonly>
+
+                    <input type="hidden" name="idUsuario" value="<?php echo $_SESSION["id"]; ?>">
+
+                  </div>
+                </div>
 
             <!-- EDITAR VALOR DOLAR -->
             <div class="form-group">

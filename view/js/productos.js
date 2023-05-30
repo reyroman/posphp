@@ -1,19 +1,20 @@
  //CARGAR TABLA DINAMICA DE PRODUCTOS
-/*
-$.ajax({
 
-url: "ajax/datatable-productos.ajax.php",
-success:function(respuesta){
-     console.log("respuesta", respuesta);
+// $.ajax({
 
- }
+// url: "ajax/datatable-productos.ajax.php",
+// success:function(respuesta){
+//      console.log("respuesta", respuesta);
 
- })
- */
+//  }
 
+//  })
+
+
+var perfilOculto = $("#perfilOculto").val();
 
 $('.tablaProductos').DataTable( {
-    "ajax": "ajax/datatable-productos.ajax.php",
+    "ajax": "ajax/datatable-productos.ajax.php?perfilOculto="+perfilOculto,
     "deferRender": true,
 	"retrieve": true,
 	"processing": true,

@@ -7,14 +7,14 @@ require_once "../controller/categorias.controller.php";
 require_once "../model/categorias.model.php";
 
 
-class TablaProductos
+class TablaProductosMovimientos
 {
 
 	/*=============================================
 	MOSTRAR LA TABLA DE PRODUCTOS
 	=============================================*/
 
-	public function mostrarTablaProductos()
+	public function mostrarTablaProductosMovimientos()
 	{
 
 		$item = null;
@@ -61,17 +61,7 @@ class TablaProductos
 			TRAEMOS LAS ACCIONES
 			=============================================*/
 
-			if(isset($_GET["perfilOculto"]) && $_GET["perfilOculto"] == "Especial"){
-
-				$botones = "<div class='btn-group'><button class='btn btn-warning btnEditarProducto'idProducto='" . $productos[$i]["id"] . "' data-toggle='modal' data-target='#modalEditarProducto'><i class='fa fa-pencil'></i></button></div>";
-
-			}else{
-
-				$botones = "<div class='btn-group'><button class='btn btn-warning btnEditarProducto'idProducto='" . $productos[$i]["id"] . "' data-toggle='modal' data-target='#modalEditarProducto'><i class='fa fa-pencil'></i></button><button class='btn btn-danger btnEliminarProducto'idProducto='" . $productos[$i]["id"] . "' codigo='".$productos[$i]["codigo"]."'><i class='fa fa-times'></i></button></div>";
-
-			}
-
-			
+			$botones = "<div class='btn-group'><button class='btn btn-primary agregarProducto recuperarBoton2' idProducto='" .$productos[$i]["id"] . "'>Agregar</button></div>";
 
 			$datosJson .= '[
 				 "' . ($i + 1) . '",
@@ -80,9 +70,6 @@ class TablaProductos
 				 "' . $productos[$i]["descripcion"] . '",
 				 "' . $categorias["nombre"] . '",
 				 "' . $stock . '",
-				 "' . $productos[$i]["precio_compra"] . '",
-				 "' . $productos[$i]["precio_venta"] . '",
-				 "' . $productos[$i]["fecha"] . '",
 				 "' . $botones . '"
 			   ],';
 
@@ -105,5 +92,5 @@ class TablaProductos
 /*=============================================
 ACTIVAR TABLA DE PRODUCTOS
 =============================================*/
-$activarProductos = new TablaProductos();
-$activarProductos->mostrarTablaProductos();
+$activarProductosMovimientos = new TablaProductosMovimientos();
+$activarProductosMovimientos->mostrarTablaProductosMovimientos();
