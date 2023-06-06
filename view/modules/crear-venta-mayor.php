@@ -3,13 +3,13 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
 
-    <h1>Crear venta</h1>
+    <h1>Crear venta al mayor</h1>
 
     <ol class="breadcrumb">
 
       <li> <a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a> </li>
 
-      <li class="active">Crear venta</li>
+      <li class="active">Crear venta al mayor</li>
 
     </ol>
 
@@ -27,7 +27,7 @@
 
           <div class="box-header with-border"></div>
 
-          <form role="form" method="post" class="formularioVenta">
+          <form role="form" method="post" class="formularioVentaMayor">
 
             <div class="box-body">
 
@@ -88,12 +88,12 @@
                   </div>
                 </div>
 
-                <!-- ENTRADA DEL TIPO DE VENTA -->
+                 <!-- ENTRADA DEL TIPO DE VENTA -->
 
-                <div class="form-group">
+                 <div class="form-group">
                   <div class="input-group">
 
-                    <input type="hidden" name="tipoVenta" value="DETAL">
+                    <input type="hidden" name="tipoVenta" value="MAYOR">
 
                   </div>
                 </div>
@@ -313,7 +313,7 @@
 
           <div class="box-body">
 
-            <table class="table table-bordered table-striped dt-responsive tablaVentas" width=100%>
+            <table class="table table-bordered table-striped dt-responsive tablaVentasMayor" width=100%>
               <thead>
                 <tr>
                   <th style="width:10px ">#</th>

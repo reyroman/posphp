@@ -137,7 +137,10 @@ session_start();
         $_GET["ruta"] == "ventas" ||
         $_GET["ruta"] == "editar-venta" ||
         $_GET["ruta"] == "crear-venta" ||
+        $_GET["ruta"] == "crear-venta-mayor" ||
+        $_GET["ruta"] == "editar-venta-mayor" ||
         $_GET["ruta"] == "reportes" ||
+        $_GET["ruta"] == "reportes-inventario" ||
         $_GET["ruta"] == "salir"
       ) {
 
@@ -169,6 +172,7 @@ session_start();
   <script src="view/js/productos.js"> </script>
   <script src="view/js/clientes.js"> </script>
   <script src="view/js/ventas.js"> </script>
+  <script src="view/js/ventas-mayor.js"> </script>
   <script src="view/js/movimientos.js"> </script>
   <script src="view/js/reportes.js"> </script>
 

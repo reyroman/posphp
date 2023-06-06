@@ -34,8 +34,8 @@ class ProductModel
     // REGISTRO DE PRODUCTO
     static public function mdlIngresarProducto($tabla, $datos){
         
-        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(id_categoria, codigo, codigo_barras, descripcion, stock, precio_compra, precio_venta) 
-        VALUES (:id_categoria, :codigo, :codigo_barras, :descripcion, :stock, :precio_compra, :precio_venta)");
+        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(id_categoria, codigo, codigo_barras, descripcion, stock, precio_compra, precio_venta, precio_mayor) 
+        VALUES (:id_categoria, :codigo, :codigo_barras, :descripcion, :stock, :precio_compra, :precio_venta, :precio_mayor)");
 
         $stmt->bindParam(':id_categoria', $datos["id_categoria"], PDO::PARAM_STR);
         $stmt->bindParam(':codigo', $datos["codigo"], PDO::PARAM_STR);
@@ -44,6 +44,7 @@ class ProductModel
         $stmt->bindParam(':stock', $datos["stock"], PDO::PARAM_STR);
         $stmt->bindParam(':precio_compra', $datos["precio_compra"], PDO::PARAM_STR);
         $stmt->bindParam(':precio_venta', $datos["precio_venta"], PDO::PARAM_STR);
+        $stmt->bindParam(':precio_mayor', $datos["precio_mayor"], PDO::PARAM_STR);
 
         if ($stmt->execute()) {
             return "ok";
@@ -64,7 +65,7 @@ class ProductModel
        
         $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET id_categoria = :id_categoria,
          codigo_barras = :codigo_barras, descripcion = :descripcion,
-          stock = :stock, precio_compra = :precio_compra, precio_venta = :precio_venta WHERE codigo = :codigo ");
+         stock = :stock, precio_compra = :precio_compra, precio_venta = :precio_venta, precio_mayor = :precio_mayor WHERE codigo = :codigo ");
           
           $stmt->bindParam(':id_categoria', $datos["id_categoria"], PDO::PARAM_STR);
           $stmt->bindParam(':codigo', $datos["codigo"], PDO::PARAM_STR);
@@ -73,6 +74,7 @@ class ProductModel
           $stmt->bindParam(':stock', $datos["stock"], PDO::PARAM_STR);
           $stmt->bindParam(':precio_compra', $datos["precio_compra"], PDO::PARAM_STR);
           $stmt->bindParam(':precio_venta', $datos["precio_venta"], PDO::PARAM_STR);
+          $stmt->bindParam(':precio_mayor', $datos["precio_mayor"], PDO::PARAM_STR);
 
         if($stmt -> execute()){
 

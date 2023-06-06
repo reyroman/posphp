@@ -23,6 +23,7 @@ require_once "model/usuarios.model.php";
 require_once "model/ventas.model.php";
 require_once "model/movimientos.model.php";
 require_once "model/dolar.model.php";
+require_once "extensions/vendor/autoload.php";
 
 $template = new TemplateController();
 $template -> ctrTemplate();

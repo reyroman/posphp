@@ -35,10 +35,11 @@ class VentasModel{
     static public function mdlIngresarVenta($tabla, $datos){
 
         
-        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(codigo, id_cliente, id_vendedor, productos, impuesto, valor_dolar, neto, total, total_bolivares, metodo_pago ) 
-        VALUES (:codigo, :id_cliente, :id_vendedor, :productos, :impuesto, :valor_dolar, :neto, :total, :total_bolivares, :metodo_pago)");
+        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(codigo, tipo_venta, id_cliente, id_vendedor, productos, impuesto, valor_dolar, neto, total, total_bolivares, metodo_pago ) 
+        VALUES (:codigo, :tipo_venta, :id_cliente, :id_vendedor, :productos, :impuesto, :valor_dolar, :neto, :total, :total_bolivares, :metodo_pago)");
 
         $stmt->bindParam(':codigo', $datos["codigo"], PDO::PARAM_STR);
+        $stmt->bindParam(':tipo_venta', $datos["tipo_venta"], PDO::PARAM_STR);
         $stmt->bindParam(':id_cliente', $datos["id_cliente"], PDO::PARAM_STR);
         $stmt->bindParam(':id_vendedor', $datos["id_vendedor"], PDO::PARAM_STR);
         $stmt->bindParam(':productos', $datos["productos"], PDO::PARAM_STR);

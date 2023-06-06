@@ -29,7 +29,13 @@ if($_SESSION["perfil"] == "Especial"){
         
       <a href="crear-venta">
         <button class="btn btn-primary">
-          Agregar venta
+          Agregar venta al detal
+        </button>
+
+      </a>
+      <a href="crear-venta-mayor">
+        <button class="btn btn-primary">
+          Agregar venta al mayor
         </button>
 
       </a>
@@ -52,14 +58,15 @@ if($_SESSION["perfil"] == "Especial"){
             <tr>
 
               <th style="width:10px">#</th>
-              <th>Código factura</th>
+              <th>Código</th>
+              <th>Tipo</th>
               <th>Cliente</th>
               <th>Vendedor</th>
               <th>Forma de pago</th>
               <th>Dolar</th>
               <th>Neto</th>
-              <th>Total Dolares</th>
-              <th>Total Bolivares</th>
+              <th>Total $</th>
+              <th>Total Bs</th>
               <th>Fecha</th>
               <th>Acciones</th>
 
@@ -88,7 +95,8 @@ if($_SESSION["perfil"] == "Especial"){
             echo'<tr>
             
     <td>'.($key+1).'</td>
-    <td>'.$value["codigo"].'</td>';
+    <td>'.$value["codigo"].'</td>
+    <td>'.$value["tipo_venta"].'</td>';
 
     $itemCliente = "id";
     $valorCliente = $value["id_cliente"];
@@ -118,11 +126,11 @@ if($_SESSION["perfil"] == "Especial"){
       <div class="btn-group">
   
       <button class="btn btn-info btnImprimirFactura" 
-      codigoVenta="' . $value["codigo"] . '"><i class="fa fa-print"></i></button>';
+      codigoVenta="' . $value["codigo"] . '" tipoVenta="' . $value["tipo_venta"] . '"><i class="fa fa-print"></i></button>';
 
       if($_SESSION["perfil"] == "Administrador"){
 
-      echo'<button class="btn btn-warning btnEditarVenta" idVenta="'.$value["id"].'"><i class="fa fa-pencil"></i></button>
+      echo'<button class="btn btn-warning btnEditarVenta" idVenta="'.$value["id"].'" tipoVenta="'.$value["tipo_venta"].'"><i class="fa fa-pencil"></i></button>
   
        <button class="btn btn-danger btnEliminarVenta"
          idVenta="'. $value["id"] .'"><i class="fa fa-times"></i></button>';

@@ -10,22 +10,10 @@
 
 //  })
 
-// VARIABLE LOCAL STORAGE
-
-if(localStorage.getItem("capturarRango") != null){
-
-	$("#daterangeVentas-btn span").html(localStorage.getItem("capturarRango"));
-
-}else{
-
-	$("#daterangeVentas-btn span").html('<i class="fa fa-calendar" ></i> Rango de fecha');
-
-}
-
 
 // CARGA DE TABLA DINAMICA
 
- $('.tablaVentas').DataTable( {
+ $('.tablaVentasMayor').DataTable( {
     "ajax": "ajax/datatable-ventas.ajax.php",
     "deferRender": true,
 	"retrieve": true,
@@ -61,7 +49,7 @@ if(localStorage.getItem("capturarRango") != null){
 
 // AGREGANDO PRODUCTOS A LA VENTA DESDE LA TABLA
 
-$(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
+$(".tablaVentasMayor tbody").on("click", "button.agregarProducto", function(){
 
 	traerValorDolar()
 
@@ -88,6 +76,8 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 		    var descripcion = respuesta["descripcion"];
 			var stock = respuesta["stock"];
 			var precio = respuesta["precio_venta"];
+			var precioMayor = respuesta["precio_mayor"];
+			var precioCredito = respuesta["precio_credito"];
 
 			// EVITAR AGREGAR PRODUCTO SI EL STOCK ESTA EN CERO
 
@@ -138,7 +128,7 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 
                       '<span class="input-group-addon"><i class="ion ion-social-usd"></i></span>'+
 
-                      '<input type="text"  class="form-control nuevoPrecioProducto" precioReal="'+precio+'" name="nuevoPrecioProducto" value="'+precio+'" readonly required>'+
+                      '<input type="text"  class="form-control nuevoPrecioProducto" precioReal="'+precioMayor+'"  name="nuevoPrecioProducto" value="'+precioMayor+'" readonly required>'+
 
 					  
                     
@@ -167,7 +157,7 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
 
 });
 
-$(".tablaVentas").on("draw.dt", function(){
+$(".tablaVentasMayor").on("draw.dt", function(){
 
 	if(localStorage.getItem("quitarProducto") != null){
 
@@ -190,7 +180,7 @@ var idQuitarProducto = [];
 
 localStorage.removeItem("quitarProducto");
 
-$(".formularioVenta").on("click", "button.quitarProducto", function(){
+$(".formularioVentaMayor").on("click", "button.quitarProducto", function(){
 
 	$(this).parent().parent().parent().parent().remove();
 
@@ -244,7 +234,7 @@ $(".formularioVenta").on("click", "button.quitarProducto", function(){
 // AGREGAR PRODUCTO AL PRESIONAR ENTER
 
 $(document).ready(function() {
-	var table = $('.tablaVentas').DataTable();
+	var table = $('.tablaVentasMayor').DataTable();
   
 	$('.input-sm').on('keydown', function(event) {
 	  if (event.keyCode === 13) { // Si se presiona la tecla Enter
@@ -259,6 +249,7 @@ $(document).ready(function() {
 	  }
 	});
   });
+
 
 
 //AGREGANDO PRODUCTOS DESDE EL BOTON PARA DISPOSITIVOS
@@ -364,7 +355,7 @@ $(".btnAgregarProducto").click(function(){
 
 // SELECCIONAR PRODUCTO
 
-$(".formularioVenta").on("change", "select.nuevaDescripcionProducto", function(){
+$(".formularioVentaMayor").on("change", "select.nuevaDescripcionProducto", function(){
 
 	var nombreProducto = $(this).val();
 	
@@ -391,7 +382,7 @@ $(".formularioVenta").on("change", "select.nuevaDescripcionProducto", function()
 
 			$(nuevaCantidadProducto).attr("stock", respuesta["stock"]);
 			$(nuevaCantidadProducto).attr("nuevoStock", Number(respuesta["stock"]-1));
-			$(nuevoPrecioProducto).val(respuesta["precio_venta"]);
+			$(nuevoPrecioProducto).val(respuesta["precio_mayor"]);
 			$(nuevoPrecioProducto).attr("precioReal", respuesta["precio_venta"]);
 
 			listarProductos()
@@ -404,7 +395,7 @@ $(".formularioVenta").on("change", "select.nuevaDescripcionProducto", function()
 
 // MODIFICAR LA CANTIDAD DE PRODUCTOS
 
-$(".formularioVenta").on("change", "input.nuevaCantidadProducto", function(){
+$(".formularioVentaMayor").on("change", "input.nuevaCantidadProducto", function(){
 
 	var precio = $(this).parent().parent().children(".ingresoPrecio").children().children(".nuevoPrecioProducto");
 
@@ -639,7 +630,7 @@ function agregarImpuesto(){
 
 	// CAMBIO EN EFECTIVO
 
-	$(".formularioVenta").on("change", "input#nuevoValorEfectivo", function(){
+	$(".formularioVentaMayor").on("change", "input#nuevoValorEfectivo", function(){
 
 		var efectivo = $(this).val();
 
@@ -654,7 +645,7 @@ function agregarImpuesto(){
 
 	// CAMBIO TRANSACCION
 
-	$(".formularioVenta").on("change", "input#nuevoCodigoTransaccion", function(){
+	$(".formularioVentaMayor").on("change", "input#nuevoCodigoTransaccion", function(){
 
 		// LISTAR METODO EN LA ENTRADA
 
@@ -681,7 +672,7 @@ function agregarImpuesto(){
 		"descripcion": $(descripcion[i]).val(),
 		"cantidad": $(cantidad[i]).val(),
 		"stock": $(cantidad[i]).attr("nuevoStock"),
-		"precio": $(precio[i]).attr("precioReal"),
+		"precio_mayor": $(precio[i]).attr("precioReal"),
 		"total": $(precio[i]).val()
 		
 	
@@ -712,24 +703,6 @@ function agregarImpuesto(){
 
 	}
 
-// BOTON EDITAR VENTA
-$(".tabla").on("click", ".btnEditarVenta", function(){
-
-		var idVenta = $(this).attr("idVenta");
-		
-		if($(this).attr("tipoVenta") == "DETAL"){
-
-			 window.location = "index.php?ruta=editar-venta&idVenta="+idVenta;
-			
-		}else{
-
-			 window.location = "index.php?ruta=editar-venta-mayor&idVenta="+idVenta;
-
-		}
-		
-
-	})
-
 
 	function quitarAgregarProducto(){
 
@@ -738,7 +711,7 @@ $(".tabla").on("click", ".btnEditarVenta", function(){
 
 		// CAPTURAR TODOS LOS BOTONES DE AGREGAR QUE APARECEN EN LA PANTALLA 
 
-		var botonesTabla = $(".tablaVentas tbody button.agregarProducto");
+		var botonesTabla = $(".tablaVentasMayor tbody button.agregarProducto");
 
 		for(var i = 0; i < idProductos.length; i++){
 
@@ -760,7 +733,7 @@ $(".tabla").on("click", ".btnEditarVenta", function(){
 
 	// EJECUTAR LA FUNCION CADA VEZ QUE CARGUE LA TABLA
 
-	$('.tablaVentas').on('draw.dt', function(){
+	$('.tablaVentasMayor').on('draw.dt', function(){
 
 		quitarAgregarProducto();
 	
@@ -796,14 +769,7 @@ $(".tabla").on("click", ".btnImprimirFactura", function(){
 
 	var codigoVenta = $(this).attr("codigoVenta");
 
-	var tipoVenta = $(this).attr("tipoVenta");
-
-	
-		window.open("extensions/tcpdf/pdf/factura.php?codigo="+codigoVenta, "_blank");
-	
-	
-
-	
+	window.open("extensions/tcpdf/pdf/factura.php?codigo="+codigoVenta, "_blank");
 
 })
 

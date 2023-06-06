@@ -35,8 +35,7 @@ $valorVenta = $this->codigo;
 
 $respuestaVenta = VentasController::ctrMostrarVentas($itemVenta, $valorVenta);
 
-
-$tipoVenta = $respuestaVenta["tipo_venta"];
+$tipoVenta = $respuestaVenta["tipo_venta"]; 
 $fecha = substr($respuestaVenta["fecha"],0,-8);
 $productos = json_decode($respuestaVenta["productos"], true);
 $neto = number_format($respuestaVenta["neto"],2);
@@ -156,21 +155,19 @@ $bloque2 = <<<EOF
 		
 			<td style="border: 1px solid #666; background-color:white; width:390px">Vendedor: $respuestaVendedor[nombre]</td>
 
-			<td style="border: 1px solid #666; background-color:white; width:150px; text-align:right">
-			
-				Tipo: $tipoVenta
-
-			</td>
-
 		</tr>
-		
+
+        <td style="border: 1px solid #666; background-color:white; width:150px; text-align:right">
+			
+				Tipo Venta: $tipoVenta
+
+	    </td>
+
 		<tr>
 		
 		<td style="border-bottom: 1px solid #666; background-color:white; width:540px"></td>
 
 		</tr>
-
-		
 
 	</table>
 
@@ -210,16 +207,7 @@ $orden = null;
 
 $respuestaProducto = ProductController::ctrMostrarProductos($itemProducto, $valorProducto, $orden);
 
-if($tipoVenta == "DETAL"){
-
-	$valorUnitario = number_format($respuestaProducto["precio_venta"], 2);
-
-}else{
-
-	$valorUnitario = number_format($respuestaProducto["precio_mayor"], 2);
-
-}
-
+$valorUnitario = number_format($respuestaProducto["precio_mayor"], 2);
 
 $precioTotal = number_format($item["total"], 2);
 

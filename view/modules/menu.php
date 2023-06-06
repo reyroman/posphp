@@ -25,6 +25,15 @@
 
 				</a>
 				
+			</li>
+			<li>
+
+				<a href="dolar" >
+					<i class="fa fa-usd"></i>
+					<span>Dolar</span>
+
+				</a>
+				
 			</li>';
 		}
 
@@ -39,15 +48,7 @@
 				</a>
 				
 			</li>
-			<li>
-
-				<a href="dolar" >
-					<i class="fa fa-usd"></i>
-					<span>Dolar</span>
-
-				</a>
-				
-			</li>
+			
 			<li>
 
 				<a href="productos" >
@@ -87,7 +88,7 @@
 							<span>Crear salida</span>
 						</a>
 					</li>
-			
+
 				</ul>
 				
 			</li>';
@@ -130,7 +131,13 @@
 					<li>
 						<a href="crear-venta">
 							<i class="fa fa-circle-o"></i>
-							<span>Crear venta</span>
+							<span>Venta al detal</span>
+						</a>
+					</li>
+					<li>
+						<a href="crear-venta-mayor">
+							<i class="fa fa-circle-o"></i>
+							<span>Venta al mayor</span>
 						</a>
 					</li>';
 		

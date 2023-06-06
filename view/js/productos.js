@@ -84,62 +84,62 @@ $("#nuevaCategoria").change(function(){
 
 })
 
-// AGREGANDO PRECIO DE VENTA
+// // AGREGANDO PRECIO DE VENTA
 
-$("#nuevoPrecioCompra, #editarPrecioCompra").change(function(){
+// $("#nuevoPrecioCompra, #editarPrecioCompra").change(function(){
 
-	if($(".porcentaje").prop("checked")){
+// 	if($(".porcentaje").prop("checked")){
 
-		var valorPorcentaje = $(".nuevoPorcentaje").val();
+// 		var valorPorcentaje = $(".nuevoPorcentaje").val();
 
-		var porcentaje = Number(($("#nuevoPrecioCompra").val()*valorPorcentaje/100))+Number($("#nuevoPrecioCompra").val());
+// 		var porcentaje = Number(($("#nuevoPrecioCompra").val()*valorPorcentaje/100))+Number($("#nuevoPrecioCompra").val());
 
-		var porcentajeEditar = Number(($("#editarPrecioCompra").val()*valorPorcentaje/100))	+Number($("#editarPrecioCompra").val());
+// 		var porcentajeEditar = Number(($("#editarPrecioCompra").val()*valorPorcentaje/100))	+Number($("#editarPrecioCompra").val());
 
 
-		$("#nuevoPrecioVenta").val(porcentaje);
-		$("#nuevoPrecioVenta").prop("readonly", true);
+// 		$("#nuevoPrecioVenta").val(porcentaje);
+// 		$("#nuevoPrecioVenta").prop("readonly", true);
 
-		$("#editarPrecioVenta").val(porcentajeEditar);
-		$("#editarPrecioVenta").prop("readonly", true);
+// 		$("#editarPrecioVenta").val(porcentajeEditar);
+// 		$("#editarPrecioVenta").prop("readonly", true);
 
-	}
-})
-// CAMBIO DE PORCENTAJE
+// 	}
+// })
+// // CAMBIO DE PORCENTAJE
  
-$(".nuevoPorcentaje, .editarPorcentaje").change(function(){
+// $(".nuevoPorcentaje, .editarPorcentaje").change(function(){
 
-	if($(".porcentaje").prop("checked")){
+// 	if($(".porcentaje").prop("checked")){
 
-		var valorPorcentaje = $(this).val();
+// 		var valorPorcentaje = $(this).val();
 
-		var porcentaje = Number(($("#nuevoPrecioCompra").val()*valorPorcentaje/100))+Number($("#nuevoPrecioCompra").val());
+// 		var porcentaje = Number(($("#nuevoPrecioCompra").val()*valorPorcentaje/100))+Number($("#nuevoPrecioCompra").val());
 
-		var porcentajeEditar = Number(($("#editarPrecioCompra").val()*valorPorcentaje/100))	+Number($("#editarPrecioCompra").val());
+// 		var porcentajeEditar = Number(($("#editarPrecioCompra").val()*valorPorcentaje/100))	+Number($("#editarPrecioCompra").val());
 
 
-		$("#nuevoPrecioVenta").val(porcentaje);
-		$(".porcentaje").prop("readonly", true);
+// 		$("#nuevoPrecioVenta").val(porcentaje);
+// 		$(".porcentaje").prop("readonly", true);
 
-		$("#editarPrecioVenta").val(porcentajeEditar);
-		$(".porcentaje").prop("readonly", true);
+// 		$("#editarPrecioVenta").val(porcentajeEditar);
+// 		$(".porcentaje").prop("readonly", true);
 
-	}
-})
+// 	}
+// })
 
-$(".porcentaje").on("ifUnchecked", function(){
+// $(".porcentaje").on("ifUnchecked", function(){
 
-	$("#nuevoPrecioVenta").prop("readonly", false);
-	$("#editarPrecioVenta").prop("readonly", false);
+// 	$("#nuevoPrecioVenta").prop("readonly", false);
+// 	$("#editarPrecioVenta").prop("readonly", false);
 
-})
+// })
 
-$(".porcentaje").on("ifChecked", function(){
+// $(".porcentaje").on("ifChecked", function(){
 
-	$("#nuevoPrecioVenta").prop("readonly", true);
-	$("#editarPrecioVenta").prop("readonly", true);
+// 	$("#nuevoPrecioVenta").prop("readonly", true);
+// 	$("#editarPrecioVenta").prop("readonly", true);
 
-})
+// })
 
 // EDITAR PRODUCTO
 
@@ -189,6 +189,8 @@ $(".tablaProductos tbody").on("click", "button.btnEditarProducto", function(){
 			$("#editarStock").val(respuesta["stock"]);
 			$("#editarPrecioCompra").val(respuesta["precio_compra"]);
 			$("#editarPrecioVenta").val(respuesta["precio_venta"]);
+			$("#editarPrecioMayor").val(respuesta["precio_mayor"]);
+			$("#editarPrecioCredito").val(respuesta["precio_credito"]);
 
             
 

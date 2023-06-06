@@ -58,6 +58,25 @@ if(localStorage.getItem("capturarRango3") != null){
 
 } );
 
+// AGREGAR PRODUCTO AL PRESIONAR ENTER
+
+$(document).ready(function() {
+	var table = $('.tablaMovimientos').DataTable();
+  
+	$('.input-sm').on('keydown', function(event) {
+	  if (event.keyCode === 13) { // Si se presiona la tecla Enter
+		var rows = table.rows({ search: 'applied' }).nodes(); // Obtener las filas filtradas
+  
+		if (rows.length === 1) { // Si hay solo una fila filtrada
+		  $(rows).find('.btnAgregarProducto').click(); // Hacer clic en el botón "Agregar producto" de esa fila
+		  event.preventDefault(); // Prevenir la acción predeterminada de la tecla Enter (submit del formulario)
+		  $('.recuperarBoton2').click();
+		  $('.input-sm').val("");
+		}
+	  }
+	});
+  });
+
 // AGREGANDO PRODUCTOS AL MOVIMIENTO DE INVENTARIO DESDE LA TABLA
 
 $(".tablaMovimientos tbody").on("click", "button.agregarProducto", function(){

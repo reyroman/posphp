@@ -127,3 +127,141 @@ Stack trace:
 #2 C:\xampp\htdocs\pos\index.php(28): TemplateController::ctrTemplate()
 #3 {main}
   thrown in C:\xampp\htdocs\pos\view\modules\crear-salida.php on line 148
+[03-Jun-2023 21:25:27 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\pos\model\productos.model.php:50
+Stack trace:
+#0 C:\xampp\htdocs\pos\model\productos.model.php(50): PDOStatement->execute()
+#1 C:\xampp\htdocs\pos\controller\productos.controller.php(46): ProductModel::mdlIngresarProducto('productos', Array)
+#2 C:\xampp\htdocs\pos\view\modules\productos.php(283): ProductController::ctrCrearProducto()
+#3 C:\xampp\htdocs\pos\view\template.php(144): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\pos\controller\template.controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\pos\index.php(28): TemplateController::ctrTemplate()
+#6 {main}
+  thrown in C:\xampp\htdocs\pos\model\productos.model.php on line 50
+[03-Jun-2023 21:26:42 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\pos\model\productos.model.php:50
+Stack trace:
+#0 C:\xampp\htdocs\pos\model\productos.model.php(50): PDOStatement->execute()
+#1 C:\xampp\htdocs\pos\controller\productos.controller.php(46): ProductModel::mdlIngresarProducto('productos', Array)
+#2 C:\xampp\htdocs\pos\view\modules\productos.php(283): ProductController::ctrCrearProducto()
+#3 C:\xampp\htdocs\pos\view\template.php(144): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\pos\controller\template.controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\pos\index.php(28): TemplateController::ctrTemplate()
+#6 {main}
+  thrown in C:\xampp\htdocs\pos\model\productos.model.php on line 50
+[03-Jun-2023 21:26:54 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\pos\model\productos.model.php:50
+Stack trace:
+#0 C:\xampp\htdocs\pos\model\productos.model.php(50): PDOStatement->execute()
+#1 C:\xampp\htdocs\pos\controller\productos.controller.php(46): ProductModel::mdlIngresarProducto('productos', Array)
+#2 C:\xampp\htdocs\pos\view\modules\productos.php(283): ProductController::ctrCrearProducto()
+#3 C:\xampp\htdocs\pos\view\template.php(144): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\pos\controller\template.controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\pos\index.php(28): TemplateController::ctrTemplate()
+#6 {main}
+  thrown in C:\xampp\htdocs\pos\model\productos.model.php on line 50
+[03-Jun-2023 21:27:39 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\pos\model\productos.model.php:50
+Stack trace:
+#0 C:\xampp\htdocs\pos\model\productos.model.php(50): PDOStatement->execute()
+#1 C:\xampp\htdocs\pos\controller\productos.controller.php(46): ProductModel::mdlIngresarProducto('productos', Array)
+#2 C:\xampp\htdocs\pos\view\modules\productos.php(283): ProductController::ctrCrearProducto()
+#3 C:\xampp\htdocs\pos\view\template.php(144): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\pos\controller\template.controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\pos\index.php(28): TemplateController::ctrTemplate()
+#6 {main}
+  thrown in C:\xampp\htdocs\pos\model\productos.model.php on line 50
+[03-Jun-2023 21:31:11 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in C:\xampp\htdocs\pos\model\productos.model.php:50
+Stack trace:
+#0 C:\xampp\htdocs\pos\model\productos.model.php(50): PDOStatement->execute()
+#1 C:\xampp\htdocs\pos\controller\productos.controller.php(46): ProductModel::mdlIngresarProducto('productos', Array)
+#2 C:\xampp\htdocs\pos\view\modules\productos.php(283): ProductController::ctrCrearProducto()
+#3 C:\xampp\htdocs\pos\view\template.php(144): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\pos\controller\template.controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\pos\index.php(28): TemplateController::ctrTemplate()
+#6 {main}
+  thrown in C:\xampp\htdocs\pos\model\productos.model.php on line 50
+[03-Jun-2023 21:35:20 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in C:\xampp\htdocs\pos\model\productos.model.php:50
+Stack trace:
+#0 C:\xampp\htdocs\pos\model\productos.model.php(50): PDOStatement->execute()
+#1 C:\xampp\htdocs\pos\controller\productos.controller.php(46): ProductModel::mdlIngresarProducto('productos', Array)
+#2 C:\xampp\htdocs\pos\view\modules\productos.php(283): ProductController::ctrCrearProducto()
+#3 C:\xampp\htdocs\pos\view\template.php(144): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\pos\controller\template.controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\pos\index.php(28): TemplateController::ctrTemplate()
+#6 {main}
+  thrown in C:\xampp\htdocs\pos\model\productos.model.php on line 50
+[04-Jun-2023 19:52:17 Europe/Berlin] PHP Warning:  Undefined array key "editarPrecioCredito" in C:\xampp\htdocs\pos\controller\productos.controller.php on line 115
+[04-Jun-2023 19:57:24 Europe/Berlin] PHP Warning:  Undefined array key "editarPrecioCredito" in C:\xampp\htdocs\pos\controller\productos.controller.php on line 115
+[04-Jun-2023 15:01:12 America/Caracas] PHP Warning:  Undefined array key "nuevoPrecioNeto" in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 106
+[04-Jun-2023 15:01:12 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'neto' cannot be null in C:\xampp\htdocs\pos\model\ventas.model.php:53
+Stack trace:
+#0 C:\xampp\htdocs\pos\model\ventas.model.php(53): PDOStatement->execute()
+#1 C:\xampp\htdocs\pos\controller\ventas.controller.php(111): VentasModel::mdlIngresarVenta('ventas', Array)
+#2 C:\xampp\htdocs\pos\view\modules\crear-venta-mayor.php(288): VentasController::ctrCrearVenta()
+#3 C:\xampp\htdocs\pos\view\template.php(145): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\pos\controller\template.controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\pos\index.php(28): TemplateController::ctrTemplate()
+#6 {main}
+  thrown in C:\xampp\htdocs\pos\model\ventas.model.php on line 53
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 347
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 380
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 388
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 392
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 419
+[04-Jun-2023 21:45:31 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\pos\controller\ventas.controller.php on line 424
+[04-Jun-2023 16:23:51 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'id_cliente, id_vendedor, productos, impuesto, valor_dolar, neto, total, total...' at line 1 in C:\xampp\htdocs\pos\model\ventas.model.php:54
+Stack trace:
+#0 C:\xampp\htdocs\pos\model\ventas.model.php(54): PDOStatement->execute()
+#1 C:\xampp\htdocs\pos\controller\ventas.controller.php(112): VentasModel::mdlIngresarVenta('ventas', Array)
+#2 C:\xampp\htdocs\pos\view\modules\crear-venta.php(298): VentasController::ctrCrearVenta()
+#3 C:\xampp\htdocs\pos\view\template.php(145): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\pos\controller\template.controller.php(7): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\pos\index.php(28): TemplateController::ctrTemplate()
+#6 {main}
+  thrown in C:\xampp\htdocs\pos\model\ventas.model.php on line 54

@@ -1,8 +1,8 @@
 <?php
- 
-if($_SESSION["perfil"] == "Vendedor"){
 
-  echo'<script>
+if ($_SESSION["perfil"] == "Vendedor") {
+
+  echo '<script>
 
   window.location = "inicio";
   
@@ -30,6 +30,15 @@ if($_SESSION["perfil"] == "Vendedor"){
           Agregar producto
         </button>
 
+        <a href="view/modules/descargar-reporte-productos.php?reporte=reporte">
+        <button class="btn btn-success" style="float: right;">
+
+            Descargar en Excel
+
+          </button>
+
+        </a> 
+
       </div>
 
       <div class="box-body">
@@ -47,6 +56,7 @@ if($_SESSION["perfil"] == "Vendedor"){
               <th>Stock</th>
               <th>Precio de compra</th>
               <th>Precio de venta</th>
+              <th>Precio al mayor</th>              
               <th>Agregado</th>
               <th>Acciones</th>
 
@@ -188,7 +198,7 @@ if($_SESSION["perfil"] == "Vendedor"){
 
                 <div class="input-group">
 
-                  <span class="input-group-addon"><i class="fa fa-arrow-up"></i></span>
+                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
                   <input type="number" class="form-control input-lg" id="nuevoPrecioCompra" name="nuevoPrecioCompra"
                     min="0" step="any" placeholder="Precio de compra" required>
@@ -203,62 +213,59 @@ if($_SESSION["perfil"] == "Vendedor"){
 
                 <div class="input-group">
 
-                  <span class="input-group-addon"><i class="fa fa-arrow-down"></i></span>
+                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
                   <input type="number" class="form-control input-lg" id="nuevoPrecioVenta" name="nuevoPrecioVenta"
                     min="0" step="any" placeholder="Precio de venta" required>
 
                 </div>
 
-                <br>
+              </div>
 
-                <!-- CHECKBOX PARA PORCENTAJE -->
+            </div>
 
-                <div class="col-xs-6">
+            <!-- ENTRADA PARA PRECIO VENTA AL MAYOR-->
 
-                  <div class="form-group">
+            <div class="form-group row">
 
-                    <label>
+              <div class="col-xs-12 col-sm-6">
 
-                      <input type="checkbox" class="minimal porcentaje" checked>
-                      Utilizar procentaje
-                    </label>
 
-                  </div>
+              </div>
 
-                </div>
 
-                <!-- ENTRADA PARA PORCENTAJE -->
+              <div class="col-xs-12 col-sm-6">
 
-                <div class="col-xs-6" style="padding:0">
+                <div class="input-group">
 
-                  <div class="input-group">
+                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
-                    <input type="number" class="form-control input-lg nuevoPorcentaje" min="0" value="40" required>
-
-                    <span class="input-group-addon"><i class="fa fa-percent"></i></span>
-
-                  </div>
+                  <input type="number" class="form-control input-lg" id="nuevoPrecioMayor" name="nuevoPrecioMayor"
+                    min="0" step="any" placeholder="Precio al mayor" required>
 
                 </div>
 
               </div>
 
-            </div> <!-- MODAL BODY -->
-          </div> <!-- MODAL BOX -->
-         </div> 
-         <!--FIN MODAL BODY -->
-          <!-- PIE DEL MODAL -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default pull-left" data-dismiss="
-        modal">Salir</button>
-            <button type="submit" class="btn btn-primary">Guardar producto</button>
-          </div>
+           
 
-          <?php
-          $crearProducto = new ProductController();
-          $crearProducto->ctrCrearProducto();
-          ?>
+            </div> <!-- MODAL BODY -->
+
+          </div> <!-- MODAL BODY -->
+        </div> <!-- MODAL BOX -->
+
+        <!--FIN MODAL BODY -->
+        <!-- PIE DEL MODAL -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default pull-left" data-dismiss="
+        modal">Salir</button>
+          <button type="submit" class="btn btn-primary">Guardar producto</button>
+        </div>
+
+        <?php
+        $crearProducto = new ProductController();
+        $crearProducto->ctrCrearProducto();
+        ?>
 
 
       </form>
@@ -351,75 +358,46 @@ if($_SESSION["perfil"] == "Vendedor"){
             </div>
 
             <!-- INGRESO DE STOCK -->
-            <div class="form-group">
-
-              <div class="input-group">
-
-                <span class="input-group-addon"><i class="fa fa-check"></i></span>
-
-                <input type="number" class="form-control input-lg" id="editarStock" name="editarStock" min="0" readonly required>
-
-              </div>
-
-            </div>
-
-            <!-- EDITAR PRECIO DE COMPRA -->
-
-            <div class="form-group row">
-
-              <div class="col-xs-12 col-sm-6">
+            <div class=" form-group">
 
                 <div class="input-group">
 
-                  <span class="input-group-addon"><i class="fa fa-arrow-up"></i></span>
+                  <span class="input-group-addon"><i class="fa fa-check"></i></span>
 
-                  <input type="number" class="form-control input-lg" id="editarPrecioCompra" name="editarPrecioCompra"
-                    min="0" step="any" required>
+                  <input type="number" class="form-control input-lg" id="editarStock" name="editarStock" min="0"
+                    readonly required>
 
                 </div>
 
               </div>
 
-              <!-- EDITAR PRECIO VENTA -->
+              <!-- EDITAR PRECIO DE COMPRA -->
 
-              <div class="col-xs-12 col-sm-6">
+              <div class="form-group row">
 
-                <div class="input-group">
-
-                  <span class="input-group-addon"><i class="fa fa-arrow-down"></i></span>
-
-                  <input type="number" class="form-control input-lg" id="editarPrecioVenta" name="editarPrecioVenta"
-                    min="0" step="any" readonly required>
-
-                </div>
-
-                <br>
-
-                <!-- CHECKBOX PARA PORCENTAJE -->
-
-                <div class="col-xs-6">
-
-                  <div class="form-group">
-
-                    <label>
-
-                      <input type="checkbox" class="minimal porcentaje" checked>
-                      Utilizar procentaje
-                    </label>
-
-                  </div>
-
-                </div>
-
-                <!-- ENTRADA PARA PORCENTAJE -->
-
-                <div class="col-xs-6" style="padding:0">
+                <div class="col-xs-12 col-sm-6">
 
                   <div class="input-group">
 
-                    <input type="number" class="form-control input-lg nuevoPorcentaje" min="0" value="40" required>
+                    <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
-                    <span class="input-group-addon"><i class="fa fa-percent"></i></span>
+                    <input type="number" class="form-control input-lg" id="editarPrecioCompra" name="editarPrecioCompra"
+                    title="Ingrese el precio de compra" min="0" step="any" required>
+
+                  </div>
+
+                </div>
+
+                <!-- EDITAR PRECIO VENTA -->
+
+                <div class="col-xs-12 col-sm-6">
+
+                  <div class="input-group">
+
+                    <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+
+                    <input type="number" class="form-control input-lg" id="editarPrecioVenta" name="editarPrecioVenta"
+                    title="Ingrese el precio de venta" min="0" step="any" required>
 
                   </div>
 
@@ -427,10 +405,37 @@ if($_SESSION["perfil"] == "Vendedor"){
 
               </div>
 
+              <!-- EDITAR PRECIO AL MAYOR -->
+
+              <div class="form-group row">
+
+                <div class="col-xs-12 col-sm-6">
+
+                </div>
+
+
+                <div class="col-xs-12 col-sm-6">
+
+                  <div class="input-group">
+
+                    <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+
+                    <input type="number" class="form-control input-lg" id="editarPrecioMayor" name="editarPrecioMayor"
+                    title="Ingrese el precio al mayor" min="0" step="any" required>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+             
+
+
             </div> <!-- MODAL BODY -->
           </div> <!-- MODAL BOX -->
-        
-                </div>
+
+
           <!-- PIE DEL MODAL -->
           <div class="modal-footer">
 
@@ -444,7 +449,7 @@ if($_SESSION["perfil"] == "Vendedor"){
           $editarProducto = new ProductController();
           $editarProducto->ctrEditarProducto();
           ?>
-        
+
       </form>
 
     </div> <!-- MODAL CONTENT -->

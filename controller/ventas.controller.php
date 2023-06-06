@@ -1,4 +1,10 @@
 <?php
+require __DIR__ . '/vendor/autoload.php';
+use Mike42\Escpos\Printer;
+use Mike42\Escpos\EscposImage;
+use Mike42\Escpos\PrintConnectors\FilePrintConnector;
+use Mike42\Escpos\PrintConnectors\WindowsPrintConnector;
+
 
 class VentasController{
 
@@ -98,6 +104,7 @@ class VentasController{
 
                 $datos = array(
                     "codigo" => $_POST["nuevaVenta"],
+                    "tipo_venta" => $_POST["tipoVenta"],
                     "id_cliente" => $_POST["seleccionarCliente"],
                     "id_vendedor" => $_POST["idVendedor"],
                     "productos" => $_POST["listaProductos"],
@@ -110,9 +117,79 @@ class VentasController{
 
                     $respuesta = VentasModel::mdlIngresarVenta($tabla, $datos);
 
-                    var_dump($respuesta);
+                      if ($respuesta == "ok") {
 
-                    if ($respuesta == "ok") {
+                        // IMPRIMIR TICKET DE VENTA 
+
+                        // $impresora = "epson20";
+
+                        // $conector = new WindowsPrintConnector($impresora);
+
+                        // $printer = new Printer($conector);
+
+                        // $printer -> setJustification(Printer::JUSTIFY_CENTER);
+
+                        // $printer -> text(date("Y-m-d H:i:s")."\n");//Fecha de la factura
+
+                        // $printer -> feed(1); //Alimentamos el papel 1 vez*/
+
+                        // $printer -> text("ServiPOS"."\n");//Nombre de la empresa
+
+                        // $printer -> text("RIF: 17.437.120-9"."\n");//Nit de la empresa
+
+                        // $printer -> text("Dirección: Calle 1 25-88"."\n");//Dirección de la empresa
+
+                        // $printer -> text("Teléfono: 0412-7304919"."\n");//Teléfono de la empresa
+
+                        // $printer -> text("FACTURA N.".$_POST["nuevaVenta"]."\n");//Número de factura
+
+                        // $printer -> feed(1); //Alimentamos el papel 1 vez*/
+
+                        // $printer -> text("Cliente: ".$traerCliente["nombre"]."\n");//Nombre del cliente
+
+                        // $tablaVendedor = "usuarios";
+                        // $item = "id";
+                        // $valor = $_POST["idVendedor"];
+
+                        // $traerVendedor = UserModel::mdlMostrarUsuarios($tablaVendedor, $item, $valor);
+
+                        // $printer -> text("Vendedor: ".$traerVendedor["nombre"]."\n");//Nombre del vendedor
+
+                        // $printer -> feed(1); //Alimentamos el papel 1 vez*/
+
+                        // foreach ($listaProductos as $key => $value) {
+
+                        //     $printer->setJustification(Printer::JUSTIFY_LEFT);
+
+                        //     $printer->text($value["descripcion"]."\n");//Nombre del producto
+
+                        //     $printer->setJustification(Printer::JUSTIFY_RIGHT);
+
+                        //     $printer->text("$ ".number_format($value["precio"],2)." Und x ".$value["cantidad"]." = $ ".number_format($value["total"],2)."\n");
+
+                        // }
+
+                        // $printer -> feed(1); //Alimentamos el papel 1 vez*/			
+                        
+                        // $printer->text("NETO: $ ".number_format($_POST["nuevoPrecioNeto"],2)."\n"); //ahora va el neto
+
+                        // $printer->text("IMPUESTO: $ ".number_format($_POST["nuevoPrecioImpuesto"],2)."\n"); //ahora va el impuesto
+
+                        // $printer->text("--------\n");
+
+                        // $printer->text("TOTAL: $ ".number_format($_POST["totalVenta"],2)."\n"); //ahora va el total
+
+                        // $printer -> feed(1); //Alimentamos el papel 1 vez*/	
+
+                        // $printer->text("Muchas gracias por su compra"); //Podemos poner también un pie de página
+
+                        // $printer -> feed(3); //Alimentamos el papel 3 veces*/
+
+                        // $printer -> cut(); //Cortamos el papel, si la impresora tiene la opción
+
+                        // $printer -> pulse(); //Por medio de la impresora mandamos un pulso, es útil cuando hay cajón moneder
+
+                        // $printer -> close();
                     
                         echo '<script>
     
@@ -488,7 +565,7 @@ static public function ctrDescargarReporte(){
     
         // CREAMOS EL ARCHIVO DE EXCEL
         
-        $Name = $_GET["reporte"].'.xls';
+        $Name = 'reporte'.'.xls';
 
         header('Expires: 0');
         header('Cache-control: private');
@@ -504,6 +581,7 @@ static public function ctrDescargarReporte(){
 
                 <tr> 
                 <td style='font-weight:bold; border:1px solid #eee;'>CÓDIGO</td> 
+                <td style='font-weight:bold; border:1px solid #eee;'>TIPO VENTA</td>
                 <td style='font-weight:bold; border:1px solid #eee;'>CLIENTE</td>
                 <td style='font-weight:bold; border:1px solid #eee;'>VENDEDOR</td>
                 <td style='font-weight:bold; border:1px solid #eee;'>CANTIDAD</td>
@@ -517,6 +595,9 @@ static public function ctrDescargarReporte(){
                 <td style='font-weight:bold; border:1px solid #eee;'>FECHA</td>		
                 </tr>");
 
+                $sumtotal = null;
+                $sumtotalBs = null;
+
         foreach ($ventas as $row => $item){
 
             $cliente = ClienteController::ctrMostrarClientes("id", $item["id_cliente"]);
@@ -524,6 +605,7 @@ static public function ctrDescargarReporte(){
 
          echo utf8_decode("<tr>
                      <td style='border:1px solid #eee;'>".$item["codigo"]."</td> 
+                     <td style='border:1px solid #eee;'>".$item["tipo_venta"]."</td>
                      <td style='border:1px solid #eee;'>".$cliente["nombre"]."</td>
                      <td style='border:1px solid #eee;'>".$vendedor["nombre"]."</td>
                      <td style='border:1px solid #eee;'>");
@@ -552,12 +634,22 @@ static public function ctrDescargarReporte(){
                 <td style='border:1px solid #eee;'>".$item["metodo_pago"]."</td>
                 <td style='border:1px solid #eee;'>".substr($item["fecha"],0,10)."</td>		
                  </tr>");
-
+                    
+        $sumtotal += floatval($item["total"]);
+        $sumtotalBs += floatval($item["total_bolivares"]);
 
         }
+        
 
-
-        echo "</table>";
+    echo("
+    <tr></tr>
+    <tr>
+        <td colspan='12'  style='font-weight:bold; text-align:right;'>Total  = $".$sumtotal."</td>
+    </tr>
+    <tr>
+        <td colspan='12'  style='font-weight:bold; text-align:right;'>Total  = ".$sumtotalBs."Bs</td>
+    </tr>");
+    echo "</table>";
 
     }
 
